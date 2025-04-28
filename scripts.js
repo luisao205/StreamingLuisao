@@ -239,12 +239,36 @@ function submitTransfer() {
     const formData = new FormData();
     formData.append("image", file);
 
-    uploadImageToImgur(file)
-        .then(imageUrl => {
+    // Suponiendo que usas un servicio para subir imágenes como Imgur
+    fetch('https://api.imgur.com/3/image', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Client-ID d22e38c9f9bb92d'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const imageUrl = data.data.link;
             redirectToWhatsApp(imageUrl);
-        })
-        .catch(error => {
-            console.error("Error al subir el archivo:", error);
-            alert("Hubo un error al subir el comprobante.");
-        });
+            
+            // Limpiar el campo de entrada del archivo después de enviar la imagen
+            fileInput.value = '';  // Esto borra la última imagen seleccionada
+        } else {
+            alert("Hubo un error al subir la imagen.");
+        }
+    })
+    .catch(error => {
+        console.error("Error al subir el archivo:", error);
+        alert("Hubo un error al subir el comprobante.");
+    });
+}
+
+// Redirigir a WhatsApp con el enlace de la imagen
+function redirectToWhatsApp(imageUrl) {
+    const phoneNumber = '+593984952217'; // Número de WhatsApp
+    const message = `📄Aquí está mi comprobante: ${imageUrl}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 }
