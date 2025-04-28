@@ -267,7 +267,7 @@ function submitTransfer() {
 
 // Redirigir a WhatsApp con el enlace de la imagen
 function redirectToWhatsApp(imageUrl) {
-    const phoneNumber = '+593984952217'; // Número de WhatsApp
+    const phoneNumber = '+593978917768'; // Número de WhatsApp
     const message = `📄Aquí está mi comprobante: ${imageUrl}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
