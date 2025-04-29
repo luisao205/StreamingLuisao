@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Luisao</title>
+     <!-- Agregar favicon -->
+     <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header-content">
+        <img src="img/logo grande.png" alt="Logo de Streaming" id="logo">
+        <h1>Servicios de Streaming</h1>
+    </header>
+
+    <!-- Barra de búsqueda -->
+<section class="search-section">
+    <div class="search-container">
+        <!-- Ícono de la lupita a la izquierda -->
+        <i class="fas fa-search" id="searchIcon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar servicio..." onkeyup="searchServices()">
+    </div>
+</section>
+
+  
+
+    <section class="services">
+        <!-- Netflix Plan Premium -->
+        <div class="service-card">
+            <img src="img/streaming-service.jpg" alt="Netflix">
+            <div class="service-info">
+                <h2>Netflix Plan Premium</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">Precio original $5/mes</p>
+                <p class="price">$3.50/mes</p>
+                <div id="paypal-button-container-netflix"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Disney Plus Plan Premium -->
+        <div class="service-card">
+            <img src="img/Disney.jpg" alt="Disney Plus">
+            <div class="service-info">
+                <h2>Disney Plan Premium</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">Precio original $8/mes</p>
+                <p class="price">$3.50/mes</p>
+                <div id="paypal-button-container-disney"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Disney Plus Plan Premium -->
+        <div class="service-card">
+            <img src="img/disneystar" alt="Disney Plus Plan Premium ">
+            <div class="service-info">
+                <h2>Disney Plus Plan Premium</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">Precio original $15/mes</p>
+                <p class="price">$5.50/mes</p>
+                <div id="paypal-button-container-disneyplus"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Amazon Prime Video -->
+        <div class="service-card">
+            <img src="img/amazon.png" alt="Amazon Prime Video">
+            <div class="service-info">
+                <h2>Amazon Prime Video</h2>
+                <p>1 Dispositivo</p>
+                <p>6 meses</p>
+                <p class="old-price">Precio original $36</p>
+                <p class="price">$20</p>
+                <div id="paypal-button-container-amazon"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- HBO Max -->
+        <div class="service-card">
+            <img src="img/hbo.avif" alt="HBO Max">
+            <div class="service-info">
+                <h2>HBO Max</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">Precio original $6/mes</p>
+                <p class="price">$3.50/mes</p>
+                <div id="paypal-button-container-hbo"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Apple TV+ -->
+        <div class="service-card">
+            <img src="img/appletv.jpg" alt="Apple TV+">
+            <div class="service-info">
+                <h2>Apple TV+</h2>
+                <p>1 Dispositivo</p>
+                <p>3 meses</p>
+                <p class="old-price">Precio original $20.97</p>
+                <p class="price">$10.50</p>
+                <div id="paypal-button-container-apple"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- YouTube Premium -->
+        <div class="service-card">
+            <img src="img/ytp.png" alt="YouTube Premium">
+            <div class="service-info">
+                <h2>YouTube Premium</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">Precio original $12/mes</p>
+                <p class="price">$5/mes</p>
+                <div id="paypal-button-container-youtube"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Spotify -->
+        <div class="service-card">
+            <img src="img/spotify.webp" alt="Spotify">
+            <div class="service-info">
+                <h2>Spotify</h2>
+                <p>1 Dispositivo</p>
+                <p>2 meses</p>
+                <p class="old-price">Precio original $5</p>
+                <p class="price">$8.50</p>
+                <div id="paypal-button-container-spotify"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+
+        <!-- Paramount+ -->
+        <div class="service-card">
+            <img src="img/paramount.png" alt="Paramount+">
+            <div class="service-info">
+                <h2>Paramount+</h2>
+                <p>1 Dispositivo</p>
+                <p class="old-price">$5/mes</p>
+                <p class="price">$1.50/mes</p>
+                <div id="paypal-button-container-paramount"></div>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de transferencia -->
+    <section id="transferencia-container" class="modal">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="close-btn">X</button>
+            <h3>Realiza tu pago por Transferencia Bancaria</h3>
+            <div class="bank-details">
+                <p class="banco-pichincha"><strong>Banco Pichincha</strong></p>
+                <p>Cuenta: 2211745021</p>
+                <p>Cta. Ahorro </p>
+            
+                <p class="banco-guayaquil"><strong>Banco Guayaquil</strong></p>
+                <p>Cuenta: 0023590595</p>
+                <p>Cta. Ahorro </p>
+            </div>
+            <br>            
+            <input type="file" id="comprobante-file" accept="image/*">
+            <button class="btn" onclick="submitTransfer()">Enviar Comprobante</button>
+        </div>
+    </section>
+
+        <!-- Botón de retroceso al index -->
+<div style="text-align:center; margin-top:20px;">
+    <button class="btn-back" onclick="window.location.href='index.html'">Volver al Inicio</button>
+</div>
+
+    <footer>
+        <p>&copy; 2025 Servicios de Streaming</p>
+    </footer>
+
+    <!-- Cargar el SDK de PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Afh73-cAIxL4o7lsytHHe1GhP2GFdAS0NikTTvViR0GnAzP55tY_ECKy8VZh30mDfplv1y-dve1kr9Pw&components=buttons"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

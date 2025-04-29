@@ -272,3 +272,20 @@ function redirectToWhatsApp(imageUrl) {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
+
+document.querySelectorAll('.service-card').forEach(card => {
+    const video = card.querySelector('.video');
+
+    card.addEventListener('mouseenter', () => {
+        console.log("Reproduciendo video");  // Verifica si el evento se dispara
+        video.load(); // Asegura que el video se recargue
+        video.play(); // Reproduce el video
+    });
+
+    card.addEventListener('mouseleave', () => {
+        console.log("Pausando video");  // Verifica si el evento se dispara
+        video.pause(); // Pausa el video
+        video.currentTime = 0; // Reinicia el video
+    });
+});
+

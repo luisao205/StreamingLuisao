@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Luisao</title>
+     <!-- Agregar favicon -->
+     <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header-content">
+        <img src="img/logo grande.png" alt="Logo de Streaming" id="logo">
+        <h1>Catalogo de Perfumeria</h1>
+    </header>
+    <!-- Barra de búsqueda -->
+<section class="search-section">
+    <div class="search-container">
+        <!-- Ícono de la lupita a la izquierda -->
+        <i class="fas fa-search" id="searchIcon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar servicio..." onkeyup="searchServices()">
+    </div>
+</section>
+
+  
+
+    <section class="services">
+        <!-- Perfume Aqua Di Gio -->
+        <div class="service-card">
+            <div class="image-container">
+                <img src="img/aqua di gio.jpg" alt="Aqua di Gio" class="default-image">
+                <video class="video" loop muted autoplay>
+                    <source src="img/Aqua di gio video.mp4" type="video/mp4">
+                </video>
+                
+            </div>
+            <div class="service-info">
+                <h2>Perfume de Caballero Aqua di Gio</h2>
+                <p>200ml</p>
+                <p class="old-price">$35</p>
+                <p class="price">$30</p>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>        
+
+        <!-- Perfume 212 Men -->
+        <div class="service-card">
+            <div class="image-container">
+                <img src="img/212.jpg" alt="Aqua di Gio" class="default-image">
+                <video class="video" loop muted autoplay>
+                    <source src="img/212 video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="service-info">
+                <h2>Perfume de Caballero 212 Men NYC</h2>
+                <p>200ml</p>
+                <p class="old-price">$35</p>
+                <p class="price">$30</p>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>        
+
+        <!-- Perfume Black XS Paco Rabanne -->
+        <div class="service-card">
+            <div class="image-container">
+                <img src="img/blackxs.jpg" alt="Aqua di Gio" class="default-image">
+                <video class="video" loop muted autoplay>
+                    <source src="img/blackxsvideo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="service-info">
+                <h2>Perfume de Caballero Black XS Afrodisiaco</h2>
+                <p>100ml</p>
+                <p class="old-price">$60</p>
+                <p class="price">$35</p>
+                <button class="btn" id="payWithTransferBtn" onclick="showTransferForm()">Pagar por Transferencia</button>
+            </div>
+        </div>        
+    </section>
+        <!-- Botón de retroceso al index -->
+<div style="text-align:center; margin-top:20px;">
+    <button class="btn-back" onclick="window.location.href='index.html'">Volver al Inicio</button>
+</div>
+
+    <footer>
+        <p>&copy; 2025 Fragancias Luisao</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

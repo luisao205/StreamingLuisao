@@ -23,6 +23,7 @@ header {
     display: flex;              /* Usamos flexbox para alinear el logo y el texto */
     align-items: center;        /* Alineamos verticalmente el logo y el texto */
     justify-content: center;    /* Alinea el logo y el texto en el centro */
+    padding: 10px;
 }
 
 /* Estilo para el logo */
@@ -72,10 +73,12 @@ h1 {
 /* Estilo para las imágenes */
 .service-card img {
     width: 100%;              /* Asegura que las imágenes ocupen el 100% del contenedor */
-    height: 200px;            /* Fija la altura de las imágenes */
-    object-fit: cover;        /* Asegura que la imagen cubra el área sin distorsionarse */
+    height: auto;             /* Deja que la altura se ajuste proporcionalmente */
+    max-height: 400px;        /* Ajusta la altura máxima si lo necesitas */
+    object-fit: contain;      /* Asegura que la imagen se ajuste sin perder proporción */
     border-bottom: 2px solid #ccc; /* Línea separadora */
 }
+
 
 /* Estilo para el contenido de las tarjetas */
 .service-info {
@@ -93,7 +96,8 @@ h1 {
 /* Precios */
 .service-info .old-price {
     text-decoration: line-through;
-    color: #999;
+    color: #e74c3c;
+
 }
 
 .service-info .price {
@@ -131,11 +135,13 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Pie de Página */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: #333;
     color: white;
+    margin-top: auto; /* Esto asegura que el pie de página siempre esté al final */
 }
 
 .modal {
@@ -304,4 +310,81 @@ footer {
         padding: 15px;
         font-size: 30px;        /* Reducimos el tamaño de la fuente del título en móviles */
     }
+}
+
+/* Estilo para el contenedor de la imagen y el video */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* O el tamaño que prefieras */
+}
+
+/* Estilo para la imagen */
+.default-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo para el video */
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar el video cuando se pasa el ratón sobre la tarjeta */
+.service-card:hover .default-image {
+    opacity: 0;
+}
+
+.service-card:hover .video {
+    opacity: 1;
+}
+
+/* Estilo específico para el botón de retroceso, alineado a la derecha */
+.btn-back {
+    background-color: #e74c3c;  /* Color de fondo rojo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: auto;
+    position: fixed;  /* Fija el botón en la pantalla */
+    right: 20px;      /* Lo coloca a 20px del borde derecho */
+    bottom: 20px;     /* Lo coloca a 20px del borde inferior */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.btn-back:hover {
+    background-color: #c0392b;  /* Rojo más oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
+
+/* Estilo para las cuentas bancarias */
+.bank-details p {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Banco Pichincha con fondo amarillo */
+.bank-details p.banco-pichincha {
+    background-color: #ffdd00; /* Color de fondo amarillo */
+    color: #333; /* Texto oscuro para contraste */
+}
+
+/* Banco Guayaquil con fondo rojo */
+.bank-details p.banco-guayaquil {
+    background-color: #d2006e; /* Color de fondo rosado */
+    color: white; /* Texto blanco para contraste */
 }
